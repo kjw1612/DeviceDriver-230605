@@ -9,9 +9,8 @@ int DeviceDriver::read(long address)
 {
     int firstReadTryValue = m_hardware->read(address);
 
-    for (int i = 1;i < TotalReadTryCount; i++)
+    for (int readRetryCount = 1; readRetryCount < TotalReadTryCount; readRetryCount++)
     {
-        Sleep(200);
         int nextReadTryValue = m_hardware->read(address);
         if (firstReadTryValue != nextReadTryValue)
         {
