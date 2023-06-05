@@ -10,5 +10,6 @@ public:
 
 protected:
     FlashMemoryDevice* m_hardware;
-    const int TotalReadTryCount = 5;
+    const int TOTAL_READ_RETRY_COUNT = 5;
+    const int WRITE_INIT_STATE = 0xFF;
 };
